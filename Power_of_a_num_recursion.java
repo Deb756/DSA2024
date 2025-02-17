@@ -10,7 +10,7 @@ public class Power_of_a_num_recursion {
             return res;
         }
          res *= base;
-        return power( base, --exp);
+        return power( base, exp-1);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
