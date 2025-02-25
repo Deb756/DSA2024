@@ -6,10 +6,6 @@ public class prime_no {
         int num = sc.nextInt();
 
         int count = 0;
-        // if(num < 2 )
-        // {
-        //     System.out.println("not");
-        // }
         for (int i = 1; i <= num/2; i++) {
             if (num % i == 0) {
                 count++;
