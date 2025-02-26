@@ -37,6 +37,7 @@ public class Second_largest_elem {
             set.add(elem);
         }
         // System.out.println(set);
+        // it convert Set to an array
         int[] fArr = set.stream().mapToInt(Integer::intValue).toArray();
 
         for (int i : fArr) {
