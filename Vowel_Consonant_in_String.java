@@ -31,7 +31,8 @@ public class Vowel_Consonant_in_String {
     }
 
     public static void main(String[] args) {
-        String str = "Hallo World";
+        // String str = "Hallo World";
+        String str = "Debabrata Senapati";
         countVowl(str);
     }
 }
