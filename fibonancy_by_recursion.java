@@ -10,7 +10,7 @@ public class fibonancy_by_recursion {
         System.out.println("Enter number of terms here : ");
         int n = sc.nextInt();
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             // if (fibo(i) == 5) {
             //     break;
             // }
