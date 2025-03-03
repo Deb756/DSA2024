@@ -46,9 +46,48 @@
 // Output: 0
 // Explanation:
 // Reading stops at the first non-digit character 'w'.
+// the number shouldn't exceed integer range if it exceeding then return Integer maxvalue or Integer minvalue
+// -91283472332
+// 91283472332
 
 public class String_to_integer {
+    public static int myAtoi(String s) {
+        int i = 0;
+        long num = 0;
+        int sign = 1;
+
+        // check whitespace
+        while(i < s.length() && s.charAt(i) == ' ')
+        {
+            i++;
+        }
+        // check for sign
+        if(i < s.length() && (s.charAt(i) == '+' || s.charAt(i) == '-'))
+        {
+            sign = s.charAt(i) == '-' ? -1 : 1;
+            i++;
+        }
+
+        // checking number
+        while (i < s.length() && Character.isDigit(s.charAt(i))) {
+            num = num * 10 + (s.charAt(i) - '0');
+
+            // check  if num is > < of int range
+            if(sign == 1 && num > Integer.MAX_VALUE)
+            {
+                return Integer.MAX_VALUE;
+            }
+            if(sign == -1 && -num < Integer.MIN_VALUE)
+            {
+                return Integer.MIN_VALUE;
+            }
+            i++;
+        }
+       return (int) num * sign;
+    }
+
     public static void main(String[] args) {
-        
+        String str = "90 -9";
+        System.out.println("Number is : " + myAtoi(str));
     }
 }
