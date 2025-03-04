@@ -15,8 +15,18 @@
 // 489 and 494 is equal to the absolute difference
 // between 484 and 489 but 484 is smaller than 494.
 
-public class closest_PallindromeNo {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
+public class closest_PallindromeNo {
+
+    public static long closestPalindrome(long num) {
+        // Code here
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(closestPalindrome(sc.nextInt()));
+        sc.close();
     }
 }
