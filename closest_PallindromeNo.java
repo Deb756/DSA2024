@@ -18,10 +18,45 @@
 import java.util.Scanner;
 
 public class closest_PallindromeNo {
+    public static boolean pallindrome(long num) {
+        long orgNum = num;
+        long rev = 0;
+        while (num != 0) {
+            rev = rev * 10 + (num % 10);
+            num /= 10;
+        }
+        return orgNum == rev;
+    }
 
     public static long closestPalindrome(long num) {
-        // Code here
-        return 0;
+        if (num < 10) {
+            return num;
+        }
+        long turn1 = 0;
+        long turn2 = 0;
+        long pal1 = 0;
+        long pal2 = 0;
+        for (int i = (int) num; i > 0; i--) {
+            if (pallindrome(i)) {
+                pal1 = i;
+                break;
+            }
+            turn1++;
+        }
+        for (int i = (int) num; i < num + 100; i++) {
+            if (pallindrome(i)) {
+                pal2 = i;
+                break;
+            }
+            turn2++;
+        }
+        if (turn1 < turn2) {
+            return pal1;
+        } else if (turn1 == turn2) {
+            return pal1 < pal2 ? pal1 : pal2;
+        } else {
+            return pal2;
+        }
     }
 
     public static void main(String[] args) {
