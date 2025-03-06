@@ -21,11 +21,30 @@
  
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            list.add(nums[i]);
+        }
+        // int comp = 0;
+        // for (int i = 0; i < nums.length; i++) {
+        //     comp = 
+        // }
+        System.out.println(list.contains(2));
         return null;
     }
     public static void main(String[] args) {
-        
+        int arr[] = {2,7,11,15};
+        int target = 9;
+        int resArr[] = twoSum(arr, target);
+        for (int i : resArr) {
+            System.out.print(i + " ");
+        }
+
+
     }
 }
