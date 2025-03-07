@@ -16,6 +16,7 @@
 // 999+1 = 1000, and so the output
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class plus_one {
@@ -40,16 +41,18 @@ public class plus_one {
             list.add(digit);
             res /= 10;
         }
-        ArrayList<Integer> aList = new ArrayList<>(list.reversed());
+        Collections.reverse(list);
+        // ArrayList<Integer> aList = new ArrayList<>(list.reversed());
         // System.out.println(list.reversed());
-        return aList;
+        return new ArrayList<>(list);
     }
 
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(1);
-        arr.add(2);
-        arr.add(3);
+        arr.add(9);
+        arr.add(9);
+        arr.add(9);
+        arr.add(4);
 
         ArrayList<Integer> result = plusOne(arr, arr.size());
         System.out.println(result); // Output: [1, 2, 4]
