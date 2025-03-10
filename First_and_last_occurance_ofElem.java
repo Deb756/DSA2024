@@ -18,10 +18,31 @@ import java.util.ArrayList;
 public class First_and_last_occurance_ofElem {
     public static ArrayList<Integer> find(int arr[], int x) {
         // code here
-        return null;
+        ArrayList<Integer> list = new ArrayList<>();
+        boolean getElm = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                getElm = true;
+                list.add(i);
+                break;
+            }
+        }
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == x) {
+                list.add(i);
+                break;
+            }
+        }
+        if (!getElm) {
+            list.add(-1);
+            list.add(-1);
+        }
+        return list;
     }
 
     public static void main(String[] args) {
-
+        int arr[] = {1, 2, 3 };
+        int target = 4;
+        System.out.println(find(arr, target));
     }
 }
