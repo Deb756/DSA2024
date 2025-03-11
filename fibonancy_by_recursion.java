@@ -9,13 +9,16 @@ public class fibonancy_by_recursion {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number of terms here : ");
         int n = sc.nextInt();
-
+        int count = 0;
         for (int i = 0; i < n; i++) {
             // if (fibo(i) == 5) {
             //     break;
             // }
+            count += fibo(i);
             System.out.print(fibo(i) + " ");
         }
+        System.out.println();
+        System.out.println("Addition of all fibonancy no is : "+count);
         sc.close();
     }
 }
