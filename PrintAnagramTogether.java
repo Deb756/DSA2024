@@ -42,6 +42,7 @@ public class PrintAnagramTogether {
             list.add(str);
             map.put(sortedStr, list);
         }
+        
         // System.out.println(map);
 
         // adding val to the ArayList
