@@ -24,6 +24,11 @@ public class SortElementsbyDecreasingFrequency {
             map.put(i, map.getOrDefault(i, 0) + 1);
             list.add(i);
         }
+        // Sorting logic ((x, y) -> ...) explained:
+        // First, it compares the values in the map (map.get(x) and map.get(y)).
+        // If the values are not equal, it sorts by descending order (map.get(y) -
+        // map.get(x)).
+        // If the values are equal, it sorts by ascending order of the keys (x - y).
         Collections.sort(list, (x, y) -> map.get(x) == map.get(y) ? x - y : map.get(y) - map.get(x));
 
         System.out.println(map);
