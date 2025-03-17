@@ -10,14 +10,28 @@
 // Explanation: The highest frequency here is 3. Element 9 has the highest frequency So 9 9 9 comes first. Now both 2 and 5 have the same frequency. So we print smaller elements first. The output is 9 9 9 2 5.
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+// import java.util.PriorityQueue;
 
 public class SortElementsbyDecreasingFrequency {
-    public ArrayList<Integer> sortByFreq(int arr[]) {
+    public static ArrayList<Integer> sortByFreq(int arr[]) {
         // add your code here
-        return null;
+        Map<Integer, Integer> map = new HashMap<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i : arr) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+            list.add(i);
+        }
+        Collections.sort(list, (x, y) -> map.get(x) == map.get(y) ? x - y : map.get(y) - map.get(x));
+
+        System.out.println(map);
+        return list;
     }
 
     public static void main(String[] args) {
-
+        int arr[] = { 9, 9, 9, 2, 5 };
+        System.out.println(sortByFreq(arr));
     }
 }
