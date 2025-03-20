@@ -12,11 +12,10 @@ public class MajorityElementII {
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
         System.out.println(map);
-        int majElem = arr.length/3;
+        int majElem = arr.length / 3;
         List<Integer> list = new ArrayList<>();
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if(entry.getValue() > majElem)
-            {
+            if (entry.getValue() > majElem) {
                 list.add(entry.getKey());
             }
         }
