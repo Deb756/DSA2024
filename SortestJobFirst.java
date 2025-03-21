@@ -27,12 +27,13 @@ public class SortestJobFirst {
         int totalWT = 0;
         int wt = 0;
         int noElem = bt.length;
+        // len-1 bcz last Bt not added to wt as we start the wt = 0 for 1st BT elem
         for (int i = 0; i < bt.length-1; i++) {
             wt += bt[i];
             totalWT += wt;
         }
-        System.out.println(noElem);
-        System.out.println(totalWT);
+        // System.out.println(noElem);
+        // System.out.println(totalWT);
         return totalWT/noElem;
       }
 
