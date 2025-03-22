@@ -17,9 +17,21 @@
 public class StockBuySell_MultipleTeansaction {
     public static int maxProfit(int arr[])
     {
-        return 0;
+        int maxP=0;
+        int countMinus = 0;
+        for(int i=1;i<arr.length;i++)
+        {
+            countMinus = arr[i] - arr[i-1];
+            if(arr[i] - arr[i-1] < 0)
+            {
+                continue;
+            }
+            maxP += countMinus;
+        }
+        return maxP;
     }
     public static void main(String[] args) {
-        
+        int arr[] = {4, 2, 2, 2, 4};
+        System.out.println(maxProfit(arr));
     }
 }
