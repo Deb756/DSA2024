@@ -17,11 +17,20 @@
 // Explanation: Don't Buy the stock.
 
 public class StcokBuyAndSell {
-    public static int maxStock(int arr[])
-    {
-        return 0;
+    public static int maxStockProfit(int arr[]) {
+        int maxP = 0;
+        int eachP = 0;
+        for (int i = 1; i < arr.length; i++) {
+            eachP = arr[i] - arr[i - 1];
+            if (eachP < 0)
+                continue;
+            maxP += eachP;
+        }
+        return maxP;
     }
+
     public static void main(String[] args) {
-        
+        int arr[] = { 100, 180, 260, 310, 40, 535, 695 };
+        System.out.println(maxStockProfit(arr));
     }
 }
