@@ -16,29 +16,34 @@
 
 // TC = o(n)
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Arrays;
+
 
 public class SmallestPositiveMissing {
     public static int missingNumber(int[] arr) {
-        
         // Your code here
-        List<Integer> list = new ArrayList<>();
-        for (int elem : arr) {
-            list.add(elem);
-        }
+        // tc(O(n log n))
+        Arrays.sort(arr);
         int count = 1;
-        for (int i = 0; i < arr.length; i++) {
-            if(list.contains(count))
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i] < 0)
             {
-                count++;
+                continue;
+            }
+            else{
+                if(arr[i] == count)
+                {
+                    count++;
+                }
             }
         }
 
         return count;
     }
     public static void main(String[] args) {
-        int arr[] = {-8, 0, -1, -4, -3};
+        int arr[] = {2, -3, 4, 1, 1, 7};
         System.out.println(missingNumber(arr));
     }
 }
