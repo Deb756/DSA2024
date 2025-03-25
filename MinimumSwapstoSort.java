@@ -23,7 +23,6 @@ public class MinimumSwapstoSort {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-
     }
     public static int minSwaps(int arr[]) {
         // Code here
@@ -36,19 +35,21 @@ public class MinimumSwapstoSort {
         Arrays.sort(arr);
         int minSwap = 0;
         // while will be used
-        for(int i=0;i<arr.length;i++)
+        int i=0;
+        while(i != arr.length)
         {
             if(i != map.get(arr[i]))
             {
                 swap(arr, i, map.get(arr[i]));
                 minSwap++;
             }
+            else i++;
         }
 
         return minSwap;
     }
     public static void main(String[] args) {
-        int arr[] = {1, 3, 4, 5, 6};
+        int arr[] = {10, 19, 6, 3, 5};
         System.out.println(minSwaps(arr));
     }
 }
