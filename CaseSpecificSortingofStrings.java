@@ -1,13 +1,19 @@
 import java.util.ArrayList;
 // import java.util.Arrays;
 import java.util.Collections;
+
 import java.util.List;
+
 
 public class CaseSpecificSortingofStrings {
     public static String sortedStr(String s)
     {   
+        
         List<Character> upper = new ArrayList<>();
         List<Character> lower = new ArrayList<>();
+        // Map<Integer,String> s = new TreeMap<>();
+        // for(Map.Entry<String,Integer> entry : s.entr)
+        
         for(char ch : s.toCharArray())
         {
             if(Character.isUpperCase(ch))
