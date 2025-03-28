@@ -36,7 +36,7 @@ public class StringKAnagrams {
         for (int i : arr) {
             System.out.print(i + " ");
         }
-        // it will count exact no of distinct char
+        // it will count exact no of distinct char  
         int ans = 0;
         for (int num : arr) {
             if (num > 0) {
