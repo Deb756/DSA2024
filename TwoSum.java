@@ -22,28 +22,34 @@
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TwoSum {
-    public static int[] twoSum(int[] nums, int target) {
+    public static List<Integer> twoSum(int[] nums, int target) {
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < nums.length; i++) {
-            list.add(nums[i]);
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<nums.length;i++)
+        {
+            map.put(nums[i],i);
         }
-        // int comp = 0;
-        // for (int i = 0; i < nums.length; i++) {
-        //     comp = 
-        // }
-        System.out.println(list.contains(2));
-        return null;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(map.containsKey(target-nums[i]))
+            {
+                list.add(i);
+                list.add(map.get(target-nums[i]));
+                break;
+            }
+        }
+        System.out.println(map);
+        return list;
     }
     public static void main(String[] args) {
         int arr[] = {2,7,11,15};
         int target = 9;
-        int resArr[] = twoSum(arr, target);
-        for (int i : resArr) {
-            System.out.print(i + " ");
-        }
+        System.out.println(twoSum(arr, target));
 
 
     }
