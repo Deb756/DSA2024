@@ -7,26 +7,29 @@
 // Output: "abc"
 // Explanation: The longest substring without repeating characters is "abc".
 
-import java.util.HashSet;
+import java.util.ArrayList;
+// import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Sliding_window_Longest_Substring {
 
-    // public static String findSub(String s)
-    // {
-    //     String temp = s;
-        
-
-    //     return null;
-    // }
-    public static void main(String[] args) {
-        String s = "bbbczabcabcbb";
-        
-        Set <Character> st = new HashSet<>();
-        for (int i = 0; i < s.length(); i++) {
-            st.add(s.charAt(i));
+    public static String findSub(String s) {
+        Set<Character> set = new LinkedHashSet<>();
+        for (char c : s.toCharArray()) {
+            set.add(c);
         }
+        List<Character> ch = new ArrayList<>(set);
+        StringBuilder res = new StringBuilder();
+        for (Character c : ch) {
+            res.append(c);
+        }
+        return res.toString();
+    }
 
-        System.out.println(st);
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println(findSub(s));
     }
 }
