@@ -66,6 +66,57 @@ public class LinkedList {
         }
     }
 
+    // delete node by its index( deletion of nth node)
+    public void removeNthNode(int k) {
+        if (head == null) {
+            return;
+        }
+        if (k == 1) {
+            head = head.next;
+            return;
+        }
+        Node curr = head;
+        Node prev = null;
+        int count = 0;
+        while (curr != null) {
+            count++;
+            if (count == k) {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+    }
+    // add at a specific position
+    public void addAtPosition(int pos,int val)
+    {
+        if(head == null)
+        {
+            return;
+        }
+        if(pos == 1)
+        {
+            Node newNode = new Node(val);
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        int count = 0;
+        while (temp.next != null) {
+            count++;
+            if(count == (pos - 1))
+            {
+                Node newNode = new Node(val);
+                newNode.next = temp.next;
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+    }
+
     // printing / Traversing the LinkedList
     public void display() {
         // we always need a temp node to traver through LinkedList bcz we cant move Head
@@ -84,8 +135,8 @@ public class LinkedList {
         list.addFirst(6);
         list.addFirst(4);
         list.addFirst(5);
-        list.addFirst(6);
-        list.addFirst(6);
+        list.addFirst(2);
+        list.addFirst(1);
         list.addFirst(6);
 
         // // add at end
@@ -97,7 +148,15 @@ public class LinkedList {
         // list.removeLast();
 
         // delete by val
-        list.removeValue(6);
+        // list.removeValue(6);
+
+         list.display();
+         System.out.println();
+        // delete nth node 
+        // list.removeNthNode(7);
+        
+        // insert at kth place
+        list.addAtPosition(5, 89);
 
         list.display();
     }
