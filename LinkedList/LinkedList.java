@@ -88,15 +88,13 @@ public class LinkedList {
             curr = curr.next;
         }
     }
+
     // add at a specific position
-    public void addAtPosition(int pos,int val)
-    {
-        if(head == null)
-        {
+    public void addAtPosition(int pos, int val) {
+        if (head == null) {
             return;
         }
-        if(pos == 1)
-        {
+        if (pos == 1) {
             Node newNode = new Node(val);
             newNode.next = head;
             head = newNode;
@@ -106,8 +104,7 @@ public class LinkedList {
         int count = 0;
         while (temp.next != null) {
             count++;
-            if(count == (pos - 1))
-            {
+            if (count == (pos - 1)) {
                 Node newNode = new Node(val);
                 newNode.next = temp.next;
                 temp.next = newNode;
@@ -115,6 +112,26 @@ public class LinkedList {
             }
             temp = temp.next;
         }
+    }
+
+    // reversing a linked list
+    public void reverseLL() {
+        if (head == null) {
+            return;
+        }
+        Node curr = head;
+        Node front = null;
+        Node prev = null;
+        while (curr != null) {
+            front = curr.next;
+            curr.next = prev;
+
+            // m preserving the prev and curr data so
+            prev = curr;
+            curr = front;
+        }
+        // it will make the lastnode to poin to head other wise it points to null
+        head = prev;
     }
 
     // printing / Traversing the LinkedList
@@ -150,13 +167,16 @@ public class LinkedList {
         // delete by val
         // list.removeValue(6);
 
-         list.display();
-         System.out.println();
-        // delete nth node 
+        list.display();
+        System.out.println();
+        // delete nth node
         // list.removeNthNode(7);
-        
+
         // insert at kth place
-        list.addAtPosition(5, 89);
+        // list.addAtPosition(5, 89);
+
+        // reversing a List
+        list.reverseLL();
 
         list.display();
     }
