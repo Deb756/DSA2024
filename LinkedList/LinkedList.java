@@ -125,7 +125,6 @@ public class LinkedList {
         while (curr != null) {
             front = curr.next;
             curr.next = prev;
-
             // m preserving the prev and curr data so
             prev = curr;
             curr = front;
