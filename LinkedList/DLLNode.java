@@ -2,8 +2,8 @@ package LinkedList;
 
 public class DLLNode {
     int data;
-    Node next;
-    Node prev;
+    DLLNode next;
+    DLLNode prev;
 
     DLLNode(int data)
     {
