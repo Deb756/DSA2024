@@ -23,8 +23,8 @@ public class DLList {
         while (temp.next != null) {
             temp = temp.next;
         }
-        newNode.next = temp.next;
         temp.next = newNode;
+        newNode.next = null;
         newNode.prev = temp;
     }
 
@@ -62,7 +62,7 @@ public class DLList {
 
         // insert at begin
         // dList.insertAtBegin(4);
-        // dList.insertAtBegin(3);
+        dList.insertAtBegin(99);
         // dList.insertAtBegin(2);
 
         // at END
