@@ -18,14 +18,37 @@ public class DLList {
         DLLNode newNode = new DLLNode(data);
         if (head == null) {
             head = newNode;
+            return;
         }
         DLLNode temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
         temp.next = newNode;
-        newNode.next = null;
         newNode.prev = temp;
+        newNode.next = null;
+    }
+
+    public void removeFirst() {
+        if (head == null || head.next == null) {
+            head = null;
+            return;
+        }
+        head = head.next;
+        head.prev = null;
+    }
+
+    public void removeLast() {
+        if (head == null || head.next == null) {
+            head = null;
+            return;
+        }
+        DLLNode tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        DLLNode newTail = tail.prev;
+        newTail.next = null;
     }
 
     // diplay in reverse
@@ -69,6 +92,12 @@ public class DLList {
         dList.insertLast(2);
         dList.insertLast(3);
         dList.insertLast(4);
+
+        // remove last
+        // dList.removeLast();
+
+        // remove first
+        dList.removeFirst();
 
         dList.display();
         System.out.println();
