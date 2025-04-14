@@ -63,7 +63,33 @@ public class DLList {
 
     public void insertAfterNum(int data,int spNum)
     {
-        
+        if(head == null)
+        {
+            return;
+        }
+        DLLNode newNode = new DLLNode(data);
+        if(head.data == spNum)
+        {
+            newNode.next = head;
+            newNode.prev = null;
+            head.prev = newNode;
+            head = newNode;
+            return;
+        }
+        DLLNode temp = head;
+        while (temp != null) {
+            if(temp.data == spNum)
+            {
+                newNode.next = temp.next;
+                if(temp.next != null){
+                temp.next.prev = newNode;
+                }
+                temp.next = newNode;
+                newNode.prev = temp;
+                break;
+            }
+            temp = temp.next;
+        }
     }
     public void removeFirst() {
         if (head == null || head.next == null) {
@@ -121,7 +147,7 @@ public class DLList {
 
         // insert at begin
         // dList.insertAtBegin(4);
-        dList.insertAtBegin(99);
+        // dList.insertAtBegin(99);
         // dList.insertAtBegin(2);
 
         // at END
@@ -130,7 +156,12 @@ public class DLList {
         dList.insertLast(4);
 
         // inset at specific pos
-        dList.insertAtPos(33, 9);
+        // dList.insertAtPos(33, 2);
+
+        // insert after specific Value
+        dList.insertAfterNum(444, 4);
+        dList.insertAfterNum(445, 3);
+        dList.insertAfterNum(0, 2);
 
         // remove last
         // dList.removeLast();
