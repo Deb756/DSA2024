@@ -29,28 +29,24 @@ public class DLList {
         newNode.next = null;
     }
 
-    public void insertAtPos(int data,int pos)
-    {
-        if(head == null)
-        {
+    public void insertAtPos(int data, int pos) {
+        if (head == null) {
             return;
         }
         DLLNode newNode = new DLLNode(data);
-        if(pos == 1)
-        {
+        if (pos == 1) {
             newNode.next = head;
             newNode.prev = null;
             // if(head != null){
-                head.prev = newNode;
+            head.prev = newNode;
             // }
             head = newNode;
         }
         int count = 1;
         DLLNode temp = head;
         while (temp.next != null) {
-            count ++;
-            if(count == pos)
-            {
+            count++;
+            if (count == pos) {
                 newNode.next = temp.next;
                 temp.next.prev = newNode;
                 temp.next = newNode;
@@ -61,15 +57,12 @@ public class DLList {
         }
     }
 
-    public void insertAfterNum(int data,int spNum)
-    {
-        if(head == null)
-        {
+    public void insertAfterNum(int data, int spNum) {
+        if (head == null) {
             return;
         }
         DLLNode newNode = new DLLNode(data);
-        if(head.data == spNum)
-        {
+        if (head.data == spNum) {
             newNode.next = head;
             newNode.prev = null;
             head.prev = newNode;
@@ -78,11 +71,10 @@ public class DLList {
         }
         DLLNode temp = head;
         while (temp != null) {
-            if(temp.data == spNum)
-            {
+            if (temp.data == spNum) {
                 newNode.next = temp.next;
-                if(temp.next != null){
-                temp.next.prev = newNode;
+                if (temp.next != null) {
+                    temp.next.prev = newNode;
                 }
                 temp.next = newNode;
                 newNode.prev = temp;
@@ -91,6 +83,7 @@ public class DLList {
             temp = temp.next;
         }
     }
+
     public void removeFirst() {
         if (head == null || head.next == null) {
             head = null;
@@ -111,6 +104,35 @@ public class DLList {
         }
         DLLNode newTail = tail.prev;
         newTail.next = null;
+    }
+
+    // remove from a specific position
+    public void removeSpePos(int pos) {
+        if (head == null) {
+            return;
+        }
+        if (pos == 1) {
+            head = head.next;
+            if (head != null) {
+                head.prev = null;
+            }
+            return;
+        }
+        DLLNode curr = head;
+        int count = 1;
+        while (curr != null) {
+            if (count == pos) {
+                if (curr.prev != null) {
+                    curr.prev.next = curr.next;
+                }
+                if (curr.next != null) {
+                    curr.next.prev = curr.prev;
+                }
+                break;
+            }
+            curr = curr.next;
+            count++;
+        }
     }
 
     // diplay in reverse
@@ -159,15 +181,18 @@ public class DLList {
         // dList.insertAtPos(33, 2);
 
         // insert after specific Value
-        dList.insertAfterNum(444, 4);
-        dList.insertAfterNum(445, 3);
-        dList.insertAfterNum(0, 2);
+        // dList.insertAfterNum(444, 4);
+        // dList.insertAfterNum(445, 3);
+        // dList.insertAfterNum(0, 2);
 
         // remove last
         // dList.removeLast();
 
         // remove first
         // dList.removeFirst();
+
+        // remove from specific pos
+        dList.removeSpePos(3);
 
         dList.display();
         System.out.println();
