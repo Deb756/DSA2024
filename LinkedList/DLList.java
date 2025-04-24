@@ -113,6 +113,7 @@ public class DLList {
         }
         if (pos == 1) {
             head = head.next;
+            // if one one node exist
             if (head != null) {
                 head.prev = null;
             }
@@ -132,6 +133,33 @@ public class DLList {
             }
             curr = curr.next;
             count++;
+        }
+    }
+
+    // remove a specific no
+    public void removeANum(int num) {
+        if (head == null) {
+            return;
+        }
+        if (head.data == num) {
+            head = head.next;
+            // if only one node exist
+            if (head != null) {
+                head.prev = null;
+            }
+            return;
+        }
+        DLLNode curr = head;
+        while (curr != null) {
+            if (curr.data == num) {
+                // for avoid NullPointerException if its the last elem of List
+                if (curr.prev != null)
+                    curr.prev.next = curr.next;
+                if (curr.next != null)
+                    curr.next.prev = curr.prev;
+                return;
+            }
+            curr = curr.next;
         }
     }
 
@@ -192,12 +220,15 @@ public class DLList {
         // dList.removeFirst();
 
         // remove from specific pos
-        dList.removeSpePos(3);
+        // dList.removeSpePos(1);
+
+        // remove a number
+        dList.removeANum(2);
 
         dList.display();
         System.out.println();
         // printing in REVERSE
-        // dList.diplayREV();
+        dList.diplayREV();
 
     }
 
