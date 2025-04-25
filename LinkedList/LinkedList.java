@@ -164,7 +164,7 @@ public class LinkedList {
         // list.removeLast();
 
         // delete by val
-        // list.removeValue(6);
+        list.removeValue(6);
 
         list.display();
         System.out.println();

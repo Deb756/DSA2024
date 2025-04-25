@@ -198,12 +198,14 @@ public class DLList {
         // insert at begin
         // dList.insertAtBegin(4);
         // dList.insertAtBegin(99);
-        // dList.insertAtBegin(2);
+        dList.insertAtBegin(2);
 
         // at END
         dList.insertLast(2);
         dList.insertLast(3);
         dList.insertLast(4);
+
+        dList.insertAtBegin(555);
 
         // inset at specific pos
         // dList.insertAtPos(33, 2);
@@ -223,12 +225,12 @@ public class DLList {
         // dList.removeSpePos(1);
 
         // remove a number
-        dList.removeANum(2);
+        // dList.removeANum(2);
 
         dList.display();
-        System.out.println();
-        // printing in REVERSE
-        dList.diplayREV();
+        // System.out.println();
+        // // printing in REVERSE
+        // dList.diplayREV();
 
     }
 
