@@ -41,6 +41,6 @@ public class StackArr {
 
 
     public static void main(String[] args) {
-
+        StackArr st = new StackArr();
     }
 }
