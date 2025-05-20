@@ -1,46 +1,71 @@
 package Stack;
 
-class StackN {
-    int size;
-    int top;
-    int arr[];
-}
-
 public class StackArr {
-    private StackN head;
+    int arr[];
+    int top;
 
-    public boolean isEmpty() {
-        if (head.top == -1)
-            return true;
-        return false;
+    StackArr(int size) {
+        arr = new int[size];
+        top = -1;
     }
 
-    public boolean isFull() {
-        if (head.top == head.size - 1)
-            return true;
-        return false;
+    boolean isEmpty() {
+        return top == -1;
     }
 
-    public void push(int data) {
+    boolean isFull() {
+        return top == arr.length - 1;
+    }
+
+    void push(int val) {
         if (isFull()) {
-            System.out.println("Stack is Full ");
+            System.out.println("Stack is Full for val : " + val);
             return;
         }
-        head.top++;
-        head.arr[head.top] = data;
+        arr[++top] = val;
     }
 
-    public int pack(int i) {
-        int idx = head.top - i + 1;
-        if (idx < 0)
+    int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack is Empty");
             return -1;
-        else {
-            return head.arr[idx];
         }
+        int elem = arr[top];
+        top--;
+        return elem;
     }
 
+    int peek() {
+        return isEmpty() ? -1 : arr[top];
+    }
+
+    // void display()
+    // {
+    // while (!isEmpty()) {
+    // System.out.print(arr[top] + " ");
+    // top--;
+    // }
+    // System.out.println();
+    // }
 
     public static void main(String[] args) {
-        StackArr st = new StackArr();
+        StackArr st = new StackArr(5);
+        st.push(4);
+        st.push(5);
+        st.push(6);
+        st.push(7);
+        st.push(8);
+        st.push(99);
+
+        System.out.println(st.isFull());
+        System.out.println(st.isEmpty());
+        System.out.println(st.peek());
+        System.out.println(st.pop());
+        System.out.println(st.peek());
+        // st.display();
+        while (!st.isEmpty()) {
+            System.out.print(st.peek() + " ");
+            st.pop();
+        }
     }
 }
