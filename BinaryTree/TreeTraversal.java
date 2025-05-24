@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import java.util.List;
+
 public class TreeTraversal {
     // preOrder Traversal
     // RULE => (root) -> (leftSubtree) -> (rightSubtree)
@@ -37,6 +39,13 @@ public class TreeTraversal {
         postOrder(root.left);
         postOrder(root.right);
         System.out.print(root.data + " ");
+    }
+
+    // levelOrder Traversal
+    // TC = O(n)
+    // SC = O(n)
+    public List<List<Integer>> levelOrder(TreNode root) {
+        return null;
     }
 
     public static void main(String[] args) {
