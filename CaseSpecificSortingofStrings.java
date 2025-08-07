@@ -45,7 +45,7 @@ public class CaseSpecificSortingofStrings {
         return sb.toString();
     }
     public static void main(String[] args) {
-        String s = "defRTSersUXI";
+        String s = "defRTSersUxI";
         System.out.println(sortedStr(s));
     }
 }
