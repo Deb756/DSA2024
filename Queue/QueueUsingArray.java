@@ -64,12 +64,12 @@ public class QueueUsingArray {
         q.enqueue(8);
         q.enqueue(9);
         q.display();
-        System.out.println(q.dequeue());
-        System.out.println(q.dequeue());
-        System.out.println(q.dequeue());
-        System.out.println(q.dequeue());
-        System.out.println(q.dequeue());
-        System.out.println(q.dequeue());
+//        System.out.println(q.dequeue());
+//        System.out.println(q.dequeue());
+//        System.out.println(q.dequeue());
+//        System.out.println(q.dequeue());
+//        System.out.println(q.dequeue());
+//        System.out.println(q.dequeue());
         q.display();
     }
 }
