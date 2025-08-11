@@ -17,6 +17,7 @@ public class Merge_Intervals {
     public static int[][] getInterval(int[][] in) {
         // sort the array
         int n = in.length;
+        // custom comparator
         Arrays.sort(in, (a, b) -> {
             if (a[0] != b[0]) {
                 return a[0] - b[0];
