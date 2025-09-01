@@ -3,6 +3,7 @@ package Graph;
 import java.util.ArrayList;
 
 public class GraphRepresentation {
+    // Undirected Graph
     public static void main(String[] args) {
 
         int n = 5;
@@ -12,6 +13,9 @@ public class GraphRepresentation {
             adj.add(new ArrayList<Integer>());
         }
         // edge 1-2
+        // graph = get(u).add(v)  (the bellow are representing this)
+        // here U -> v and V -> U added (Undirected Graph)
+        // but in Directed graph only U -> v be added as their is direction given like a->b u will go cant back from a to b as their is no dir to back
         adj.get(1).add(2);
         adj.get(2).add(1);
         // edge 1-3
@@ -31,9 +35,11 @@ public class GraphRepresentation {
         adj.get(5).add(4);
 
         for (int i = 0; i < n + 1; i++) {
+            System.out.print("{ ");
             for (int j = 0; j < adj.get(i).size(); j++) {
                 System.out.print(adj.get(i).get(j) + " ");
             }
+            System.out.print("}");
         }
         System.out.println();
 
